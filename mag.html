@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой Книжный Магазин</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .interface-switch {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .interface-switch button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .book-catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .book-card {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .book-card h3 {
+            margin-top: 0;
+        }
+        .book-meta {
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        .actions button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .admin-panel {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: none; /* Изначально скрыт */
+        }
+        .admin-panel h2 {
+            text-align: center;
+        }
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .admin-table th, .admin-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .admin-actions button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Книжный Магазин</h1>
+        </header>
+
+        <div class="interface-switch">
+            <button onclick="document.querySelector('.user-interface').style.display='block'; document.querySelector('.admin-panel').style.display='none';">Пользователь</button>
+            <button onclick="document.querySelector('.user-interface').style.display='none'; document.querySelector('.admin-panel').style.display='block';">Администратор</button>
+        </div>
+
+        <div class="user-interface">
+            <h2>Каталог книг</h2>
+            <div class="sort-options" style="margin-bottom: 20px;">
+                <label>Сортировать по:</label>
+                <select>
+                    <option>Категории</option>
+                    <option>Автору</option>
+                    <option>Году написания</option>
+                </select>
+            </div>
+            <div class="book-catalog">
+                <div class="book-card">
+                    <h3>"Война и мир"</h3>
+                    <div class="book-meta">Автор: Лев Толстой | Категория: Классика | Год: 1869</div>
+                    <p>Цена: 500 руб.</p>
+                    <div class="actions">
+                        <button>Купить</button>
+                        <button>Арендовать</button>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <h3>"Мастер и Маргарита"</h3>
+                    <div class="book-meta">Автор: Михаил Булгаков | Категория: Фантастика | Год: 1940</div>
+                    <p>Цена: 450 руб.</p>
+                    <div class="actions">
+                        <button>Купить</button>
+                        <button>Арендовать</
